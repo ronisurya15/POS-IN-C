@@ -1,5 +1,6 @@
-// Name : 
-// Kelas :
+// Name : ....
+// Kelas : ....
+
 #include <stdio.h>
 
 // Methods
@@ -26,7 +27,7 @@ int main () {
     int kelas, jadwal, tiket;
     
     // Initialize Layout
-    printf("=== Selamat datang di aplikasi booking kereta ===\n");
+    printf("=== Selamat datang di aplikasi (Booking Dulu) ===\n\n");
     printf("Kelas Kereta");
     printf("\n");
     printf("1. Express (Rp. 150.000) \n");
@@ -66,12 +67,14 @@ int main () {
         char times[3][20]  = {"06.00","13.00","18.00"};
 
         // Style
-        printf("=== Invoice === \n");
+        printf("\n === Invoice === \n");
         printf("Kelas Tiket : Express \n");
         printf("Jadwal Kereta : %s \n", times[jadwal]);
         printf("Jumlah Tiket : %i \n", tiket);
         printf("Harga: %i \n", price);
         printf("Total Pembayaran (%d x %d) : %d \n",price, tiket, hitung(price, tiket, kelas));
+        printf("Pembayaran total sudah mencakup potongan. \n\n");
+        printf("*** Terdapat potongan sebesar 10%% untuk kelas Express apabila pembelian tiket mencapai 3 tiket *** \n");
     } else if (kelas == 2) {
         printf("Jadwal Kelas Bisnis");
         printf("\n");
@@ -92,12 +95,14 @@ int main () {
         char times[4][20]   = {"07.00","10.00","14.00","19.00"};
 
         // Invoice
-        printf("=== Invoice === \n");
+        printf("\n === Invoice === \n");
         printf("Kelas Tiket : Bisnis \n");
         printf("Jadwal Kereta : %s \n", times[jadwal]);
         printf("Jumlah Tiket : %i \n", tiket);
         printf("Harga: %i \n", price);
         printf("Total Pembayaran (%d x %d) : %d \n",price, tiket, hitung(price, tiket, kelas));
+        printf("Pembayaran total sudah mencakup potongan. \n\n");
+        printf("*** Terdapat potongan sebesar 15%% untuk kelas Bisnis apabila pembelian tiket mencapai 4 tiket) *** \n");
     } else if (kelas == 3) {
         printf("Jadwal Kelas Bisnis \n");
         printf("\n");
@@ -119,7 +124,7 @@ int main () {
         char times[5][20]   = {"06.30","09.30","11.30","15.00","18.00"};
 
         // Invoice
-        printf("=== Invoice === \n");
+        printf("\n === Invoice === \n");
         printf("Kelas Tiket : Ekonomi \n");
         printf("Jadwal Kereta : %s \n", times[jadwal]);
         
@@ -132,6 +137,8 @@ int main () {
         printf("Harga: %i \n", price);
         
         printf("Total Pembayaran (%d x %d) : %d \n",price, tiket, hitung(price, tiket, kelas));
+        printf("Pembayaran total sudah mencakup potongan. \n\n");
+        printf("*** Mendapatkan 1 tiket gratis saat memesan 5 tiket ekonomi *** \n");
     } else {
         printf("Kelas Tiket yang dipilih tidak tersedia");
     }
@@ -146,7 +153,6 @@ int hitung(price, tiket, kelas) {
     // Notes :
     // 1. Apabila kelas yang dipilih Express dan tiket yang dibeli minimal sebanyak 3 tiket maka akan mendapat potongan harga 10%.
     // 2. Apabila kelas yang dipilih Bisnis dan tiket yang dibeli sebanyak 4 tiket maka akan mendapatkan potongan harga 15%.
-    // 3. Apabila kelas yang dipilih ekonomi dan tiket yang dibeli 5 tiket maka akan mendpat 1 tiket gratis.
     
     int discount = 0;
 
