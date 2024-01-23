@@ -1,5 +1,5 @@
 // Name : ....
-// Kelas : ....
+// Kelas : ...
 
 #include <stdio.h>
 
@@ -69,7 +69,7 @@ int main () {
         // Style
         printf("\n === Invoice === \n");
         printf("Kelas Tiket : Express \n");
-        printf("Jadwal Kereta : %s \n", times[jadwal]);
+        printf("Jadwal Kereta : %s \n", times[(jadwal - 1)]);
         printf("Jumlah Tiket : %i \n", tiket);
         printf("Harga: %i \n", price);
         printf("Total Pembayaran (%d x %d) : %d \n",price, tiket, hitung(price, tiket, kelas));
@@ -97,7 +97,7 @@ int main () {
         // Invoice
         printf("\n === Invoice === \n");
         printf("Kelas Tiket : Bisnis \n");
-        printf("Jadwal Kereta : %s \n", times[jadwal]);
+        printf("Jadwal Kereta : %s \n", times[(jadwal - 1)]);
         printf("Jumlah Tiket : %i \n", tiket);
         printf("Harga: %i \n", price);
         printf("Total Pembayaran (%d x %d) : %d \n",price, tiket, hitung(price, tiket, kelas));
@@ -126,7 +126,7 @@ int main () {
         // Invoice
         printf("\n === Invoice === \n");
         printf("Kelas Tiket : Ekonomi \n");
-        printf("Jadwal Kereta : %s \n", times[jadwal]);
+        printf("Jadwal Kereta : %s \n", times[(jadwal - 1)]);
         
         if (tiket == 5) {
             printf("Jumlah Tiket (Termasuk 1 tiket gratis) : %i \n", (tiket + 1));
