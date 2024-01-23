@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 // Methods
-int hitung(int price, int qty);
+int hitung(int price, int tiket, int kelas);
 
 // Mengembalikan nilai
 int main () {
@@ -23,7 +23,7 @@ int main () {
 
     // Initialize Variable
     // Notes : Variable = tipe data (char, int, float, dst)
-    int kelas, jadwal, qty;
+    int kelas, jadwal, tiket;
     
     // Initialize Layout
     printf("=== Selamat datang di aplikasi booking kereta ===\n");
@@ -38,11 +38,19 @@ int main () {
     printf("Silahkan masukkan pilihan anda : ");
     scanf("%i", &kelas);
 
+    // Notes :
+    // 1. User harus memilih kelas kereta api, kemudian pilih jadwal keberangkatan, dan jumlah tiket yang akan dibeli.
+    // 2. Apabila kelas yang dipilih Express dan tiket yang dibeli minimal sebanyak 3 tiket maka akan mendapat potongan harga 10%.
+    // 3. Apabila kelas yang dipilih bisnis dan tiket yang dibeli sebanyak 4 tiket maka akan mendapatkan potongan harga 15%.
+    // 4. Apabila kelas yang dipilih ekonomi dan tiket yang dibeli 5 tiket maka akan mendpat 1 tiket gratis.
+    // 5. Informasi/output yang ditampilkan adalah kelas, harga tiket, jumlah tiket, dan pembayaran.
+    // 6. Silahkan tentukan tipe data dan variabel apa yang digunakan didalam pembangunan aplikasi ini.
+
     // Pengkondisian (IF / Switch Case)
     switch (kelas)
     {
         case 1:
-            printf("Daftar Jadwal Kelas Express");
+            printf("Jadwal Kelas Express");
             printf("\n");
             printf("1. 06.00 \n");
             printf("2. 13.00 \n");
@@ -51,19 +59,19 @@ int main () {
             
             printf("Masukkan Jadwal : ");
             scanf("%i", &jadwal);
-            printf("Masukkan Jumlah Pesanan : ");
-            scanf("%i", &qty);
+            printf("Masukkan Jumlah Tiket : ");
+            scanf("%i", &tiket);
 
             // Initialize
             int price = 150000;
 
             // Style
             printf("=== Invoice ===");
-            printf("Kelas Kereta : %i \n", kelas);
+            printf("Kelas Tiket : %i \n", kelas);
             printf("Jadwal Kereta : %i \n", jadwal);
-            printf("Jumlah Pesanan : %i \n", qty);
+            printf("Jumlah Tiket : %i \n", tiket);
             printf("Harga: %i \n", price);
-            printf("Total Pembayaran (%d x %d) : %d \n",price, qty, hitung(price, qty));
+            printf("Total Pembayaran (%d x %d) : %d \n",price, tiket, hitung(price, tiket, 1));
         break;
         case 2:
             // Code For Bussines
@@ -80,9 +88,17 @@ int main () {
     return 0;
 }
 
-int hitung(price, qty) {
+int hitung(price, tiket, kelas) {
+    // 1. Apabila kelas yang dipilih Express dan tiket yang dibeli minimal sebanyak 3 tiket maka akan mendapat potongan harga 10%.
+    // 2. Apabila kelas yang dipilih bisnis dan tiket yang dibeli sebanyak 4 tiket maka akan mendapatkan potongan harga 15%.
+    // 3. Apabila kelas yang dipilih ekonomi dan tiket yang dibeli 5 tiket maka akan mendpat 1 tiket gratis.
+
+    if (kelas == 1) {
+        /* code */
+    }
+
     // Initialize
-    int totals = (price * qty);
+    int totals = (price * tiket);
 
     return totals;
 }
