@@ -93,12 +93,15 @@ int hitung(price, tiket, kelas) {
     // 2. Apabila kelas yang dipilih bisnis dan tiket yang dibeli sebanyak 4 tiket maka akan mendapatkan potongan harga 15%.
     // 3. Apabila kelas yang dipilih ekonomi dan tiket yang dibeli 5 tiket maka akan mendpat 1 tiket gratis.
 
-    if (kelas == 1) {
-        /* code */
+     int discount = 0;
+
+    if (kelas == 1) { // Express
+        if (tiket >= 3) {
+            discount = ((price * tiket) * 0.1);
+        }
+
+        totals = ((price * tiket) - discount);
     }
-
-    // Initialize
-    int totals = (price * tiket);
-
+    
     return totals;
 }
