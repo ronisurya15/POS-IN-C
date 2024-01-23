@@ -2,8 +2,8 @@
 // Kelas :
 #include <stdio.h>
 
-// Init
-void express();
+// Methods
+int hitung(int price, int qty);
 
 // Mengembalikan nilai
 int main () {
@@ -23,15 +23,15 @@ int main () {
 
     // Initialize Variable
     // Notes : Variable = tipe data (char, int, float, dst)
-    int kelas;
+    int kelas, jadwal, qty;
     
     // Initialize Layout
-    printf("=== Selamat datang di booking aplikasi ===\n");
+    printf("=== Selamat datang di aplikasi booking kereta ===\n");
     printf("Kelas Kereta");
     printf("\n");
-    printf("1. Express \n");
-    printf("2. Bisnis \n");
-    printf("3. Ekonomi \n");
+    printf("1. Express (Rp. 150.000) \n");
+    printf("2. Bisnis (Rp. 80.000) \n");
+    printf("3. Ekonomi (Rp. 5.000) \n");
     printf("\n");
 
     // Input dari pengguna
@@ -42,28 +42,47 @@ int main () {
     switch (kelas)
     {
         case 1:
-            express();
+            printf("Daftar Jadwal Kelas Express");
+            printf("\n");
+            printf("1. 06.00 \n");
+            printf("2. 13.00 \n");
+            printf("3. 18.00 \n");
+            printf("\n");
+            
+            printf("Masukkan Jadwal : ");
+            scanf("%i", &jadwal);
+            printf("Masukkan Jumlah Pesanan : ");
+            scanf("%i", &qty);
+
+            // Initialize
+            int price = 150000;
+
+            // Style
+            printf("=== Invoice ===");
+            printf("Kelas Kereta : %i \n", kelas);
+            printf("Jadwal Kereta : %i \n", jadwal);
+            printf("Jumlah Pesanan : %i \n", qty);
+            printf("Harga: %i \n", price);
+            printf("Total Pembayaran (%d x %d) : %d \n",price, qty, hitung(price, qty));
         break;
         case 2:
-            // busniess();
+            // Code For Bussines
         break;
         case 3:
-            // ekonomi();
+            // Code For Economy
         break;
         
         default:
-            express();
+            // 
         break;
     }
 
     return 0;
 }
 
-void express() {
-    printf("testing");
-}
+int hitung(price, qty) {
+    // Initialize
+    int totals = (price * qty);
 
-// Tidak mengembalikan nilai atau cetak nilai ke layar
-// void kelas() {
-//     printf("Saya kelas IF1A");
-// }
+    return totals;
+}
